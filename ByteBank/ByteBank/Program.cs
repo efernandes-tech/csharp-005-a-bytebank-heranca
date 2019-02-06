@@ -36,6 +36,12 @@ namespace ByteBank
             // Código válido.
             Funcionario pedro = new Diretor();
 
+            Funcionario robertaTeste = new Funcionario();
+            robertaTeste = roberta;
+
+            Console.WriteLine("Bonificação de referência de Diretor: " + roberta.GetBonificacao());
+            Console.WriteLine("Bonificação de referência de Funcionário: " + robertaTeste.GetBonificacao());
+
             Console.ReadLine();
         }
     }
