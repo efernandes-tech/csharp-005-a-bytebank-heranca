@@ -1,0 +1,4 @@
+# csharp-005-a-proj-bytebank
+
+# Anotações:
+- Curso da Alura.
