@@ -33,6 +33,9 @@ namespace ByteBank
 
             Console.WriteLine("Total de Bonificações: " + gerenciador.getTotalBonificacao());
 
+            // Código válido.
+            Funcionario pedro = new Diretor();
+
             Console.ReadLine();
         }
     }
