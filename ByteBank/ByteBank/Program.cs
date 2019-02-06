@@ -7,50 +7,37 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+            CalcularBonificacao();
+           
+            Console.ReadLine();
+        }
 
-            Funcionario carlos = new Funcionario(2000, "12345");
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
 
-            carlos.Nome = "Carlos";
+            Designer pedro = new Designer("123");
+            pedro.Nome = "Pedro";
 
-            gerenciador.Registrar(carlos);
-
-            Console.WriteLine(carlos.Nome);
-            Console.WriteLine(carlos.Salario);
-            Console.WriteLine(carlos.GetBonificacao());
-
-            Diretor roberta = new Diretor("54321");
-
+            Diretor roberta = new Diretor("456");
             roberta.Nome = "Roberta";
 
-            gerenciador.Registrar(roberta);
+            Auxiliar igor = new Auxiliar("789");
+            igor.Nome = "Igor";
 
-            Console.WriteLine(roberta.Nome);
-            Console.WriteLine(roberta.Salario);
-            Console.WriteLine(roberta.GetBonificacao());
+            GerenteDeConta camila = new GerenteDeConta("159");
+            camila.Nome = "Camila";
 
-            Console.WriteLine("Total de Bonificações: " + gerenciador.getTotalBonificacao());
+            Funcionario camilaTeste = new GerenteDeConta("159");
+            camila.Nome = "Camila";
 
-            // Código válido.
-            /*
-            Funcionario pedro = new Diretor();
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(camila);
 
-            Funcionario robertaTeste = new Funcionario();
-            robertaTeste = roberta;
-
-            Console.WriteLine("Bonificação de referência de Diretor: " + roberta.GetBonificacao());
-            Console.WriteLine("Bonificação de referência de Funcionário: " + robertaTeste.GetBonificacao());
-            */
-
-            Console.WriteLine("Total de funcionários: " + Funcionario.TotalDeFuncionarios);
-
-            carlos.AumentarSalario();
-            roberta.AumentarSalario();
-
-            Console.WriteLine("Novo salário de " + carlos.Nome + " é " + carlos.Salario);
-            Console.WriteLine("Novo salário de " + roberta.Nome + " é " + roberta.Salario);
-
-            Console.ReadLine();
+            Console.WriteLine("Total de Bonificações do Mês: "
+                + gerenciadorBonificacao.getTotalBonificacao());
         }
     }
 }
